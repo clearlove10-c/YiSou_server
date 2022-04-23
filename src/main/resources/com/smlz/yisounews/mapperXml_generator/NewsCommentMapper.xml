@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smlz.yisounews.mapper.NewsCommentMapper">
+    <select id="getComments" parameterType="Integer" resultType="com.smlz.yisounews.entity.NewsCommentResponse">
+        SELECT
+            a.comment_id,
+            a.user_id,
+            b.user_name,
+            a.content,
+            a.comment_time
+        FROM
+            news_comment AS a
+                INNER JOIN user_info AS b ON a.user_id = b.user_id
+        WHERE
+            a.news_id =${parameter }
+    </select>
+
+</mapper>

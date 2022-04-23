@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yisounews_v1?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    tomcat:
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+
+  devtools:
+    livereload:
+      enabled: true
+
+  jackson:
+    date-format: yyyy-MM-dd
+    default-property-inclusion: non_null
+
+  main:
+    allow-circular-references: true
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+
+
+mybatis-plus:
+  type-aliases-package: com.smlz.yisounews.entity
+  mapper-locations: classpath:com/smlz/yisounews/mapperXml_generator/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
