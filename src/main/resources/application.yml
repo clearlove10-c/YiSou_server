@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/yisounews_v1?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
-    password: 123456
+    password: 123456Aa.
     tomcat:
       max-idle: 10
       max-wait: 10000
